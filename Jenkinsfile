@@ -2,9 +2,11 @@ pipeline {
   agent any
   
   stages {
-    stage('Hello') {
+    stage('Build') {
           steps {
-            echo "Hello World"
+            sh 'cd /var/www/html/'
+            sh 'rm -rf calculator'
+            sh 'git clone https://github.com/ShrutiChaube/calculator'
           }
     }
   }
